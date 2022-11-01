@@ -11,6 +11,17 @@
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <script>
       window.googletag = window.googletag || {cmd: []};
+
+      googletag.cmd.push(function() {
+        googletag.defineSlot('/6355419/Travel',[300, 250], 'div-for-slot')
+            .setTargeting('test', 'event')
+            .addService(googletag.pubads());
+        googletag.pubads().disableInitialLoad();
+        googletag.enableServices();
+      });
+    </script>
+    <script>
+      window.googletag = window.googletag || {cmd: []};
       googletag.cmd.push(function() {
         
         googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'slot-3')
@@ -27,6 +38,37 @@
         });
       }
     </script>
+    <style>
+      .buttons {
+         display: flex;
+         justify-content: center
+      }
+
+      .column {
+        float: left;
+        height: 500px;
+        min-width: 300px;
+        max-width: 33%;
+      }
+
+      .placeholder {
+        align-items: center;
+        background-color: lightgrey;
+        display: flex;
+        justify-content: center;
+      }
+
+      .placeholder:empty::before {
+        background-color: dimgrey;
+        border-radius: 5px;
+        color: lightgrey;
+        content: "Ad";
+        font: 12px sans-serif;
+        padding: 3px;
+        text-align: center;
+        width: 20px;
+      }
+    </style>
     <style>
         .bodyStyle{
             font-size: 32px;
@@ -56,7 +98,7 @@
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem, ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Donec vitae ornare risus. Maecenas eleifend ante vel dui laoreet, et porttitor libero rutrum. Nam arcu mi, ullamcorper at risus et, pulvinar ultrices erat. In pellentesque sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut. Sed sagittis aliquet lorem sed dictum.
   </p>
 <div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
-      
+ </div>
  <div class="column">
   <h5>Advertisement</h5>
   <p class="previewOnly">
@@ -126,6 +168,25 @@
         <li><a href="javascript:admob.showBanner(admob.BannerSize.SMART_BANNER,admob.Position.TOP_CENTER);">Banner Relation</a></li>
     </lu>
 </div>
+<div id="div-for-slot" style="width: 300px; height: 250px;">
+      <script>
+        googletag.cmd.push(function() {
+          // This will only register the slot.
+          // Ad will be fetched only when refresh is called.
+          googletag.display('div-for-slot');
+        });
+      </script>
+    </div>
+    <button onclick="googletag.cmd.push(function() { googletag.pubads().refresh(); });">
+      Refresh Ad
+    </button>
+
+
+<div class="buttons">
+      <button onclick="loadAds();">Load Ads</button>
+    </div>
+
+
 <div id="alertdiv"/>
 <script type="text/javascript" src="ads.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
