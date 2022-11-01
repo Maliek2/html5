@@ -12,10 +12,7 @@
     <script>
       window.googletag = window.googletag || {cmd: []};
       googletag.cmd.push(function() {
-        googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'slot-1')
-                 .addService(googletag.pubads());
-        googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'slot-2')
-                 .addService(googletag.pubads());
+        
         googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'slot-3')
                  .addService(googletag.pubads());
 
@@ -54,6 +51,17 @@
 </div>
 </div>
 </div>
+
+
+
+
+
+<script type="text/javascript">
+    function onDeviceReady() {
+        admob.initAdmob("banner ID","interstitial ID");
+    }
+    document.addEventListener('deviceready',onDeviceReady, true);
+</script>
 <script type="text/javascript">
 function showTestBanner(){
 var admobParam=new  admob.Params();
@@ -96,12 +104,7 @@ var admobParam=new  admob.Params();
 
 </div>
 <script type="text/javascript" src="ads.js"></script>
-<script type="text/javascript">
-    function onDeviceReady() {
-        admob.initAdmob("banner ID","interstitial ID");
-    }
-    document.addEventListener('deviceready',onDeviceReady, true);
-</script>
+
 <lu>
         <li><a href="javascript:admob.cacheInterstitial();">Load Interstitial</a></li>
         <br/>
