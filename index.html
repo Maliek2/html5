@@ -65,16 +65,16 @@
 </head>
 <body >
 <div class="bodyStyle">
-<h1>Maliek App</h1>
-    <div align="center" class="buttons">
-      <button onclick="loadAds();">Load ads</button>
-    
+    <h1>Maliek App</h1>
+
+    <div align="center">
     <div class="column">
-      <h2>Space reserved with placeholder</h2>
+      <h2>Advertisement</h2>
       <div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <button onclick="loadAds();">Load Ads</button>
     
-    
+    </div>
+
     <lu>
         <li><a href="javascript:admob.cacheInterstitial();">Load Interstitial</a></li>
         <br/>
@@ -98,12 +98,12 @@
         <br/><br/>
         <li><a href="javascript:admob.showBanner(admob.BannerSize.SMART_BANNER,admob.Position.TOP_CENTER);">Banner Relation</a></li>
     </lu>
-</div>
+
 </div>
 </div>
 <script type="text/javascript">
 function showTestBanner(){
- 		var admobParam=new  admob.Params();
+var admobParam=new  admob.Params();
         //admobParam.extra={'keyword':"admob phoneapp"};
         //admobParam.isForChild=true;
         admobParam.isTesting=true;
