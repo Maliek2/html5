@@ -8,7 +8,18 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <link rel="canonical" href="https://maliek2.github.io/html5">
     <title>News App Demo</title>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    
     <style>
+      #link {
+        display: none;
+      }
+
+      div.content {
+        position: fixed;
+        top: 50%;
+      }
+    
         .bodyStyle{
             font-size: 32px;
         }
@@ -83,14 +94,37 @@ function showTestBanner(){
     
 
 </div>
-<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="ads.js"></script>
 <script type="text/javascript">
     function onDeviceReady() {
         admob.initAdmob("banner ID","interstitial ID");
     }
     document.addEventListener('deviceready',onDeviceReady, false);
 </script>
-
+<div id="static-ad-1" style="width: 100px; height: 100px;"></div>
+    <div class="content">
+      <span id="status">Web interstitial is not supported on this page.</span>
+      <p>
+        <a id="link" href="https://www.example.com/">TRIGGER INTERSTITIAL</a>
+      </p>
+      <p>
+        <!--
+          You can prevent specific links from triggering GPT-managed web interstials by
+          adding a data-google-interstitial="false" attribute to the anchor element or
+          any ancestor of the anchor element.
+        -->
+        <a data-google-interstitial="false" href="https://www.example.com/">
+          This link will never trigger an interstitial
+        </a>
+      </p>
+    </div>
+    <script>
+        googletag.cmd.push(function() {
+          // Ensure the first call to display comes after static ad slot
+          // divs are defined.
+          googletag.display(staticSlot);
+        });
+    </script>
 
 </body>
 </html>
