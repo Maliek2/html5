@@ -45,7 +45,7 @@
               .addService(googletag.pubads());
 
           document.getElementById('status').innerText =
-            'Anchor ad is initialized. Scroll page to activate.';
+            'Scroll News.';
         }
 
         // Define static ad slots.
@@ -64,14 +64,13 @@ div {
     background-color: rgb(0, 191, 255);
     color: rgb(255, 255, 255);
 }
-</style>
+   </style>
 
 </head>
 <body>
   <div id="page-content" style="height: 900vh;">
-      <h1 id="status">Anchor ads are not supported on this page.</h1>
-      <div id="static-ad-1" style="width: 100px; height: 100px;"></div>
-    
+   <h1 id="status">News Blog</h1>
+   
   <h3>Advertisement</h3>
   <p class="previewOnly">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem, ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Donec vitae ornare risus. Maecenas eleifend ante vel dui laoreet, et porttitor libero rutrum. Nam arcu mi, ullamcorper at risus et, pulvinar ultrices erat. In pellentesque sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut. Sed sagittis aliquet lorem sed dictum.
@@ -159,7 +158,8 @@ div {
   </p>
 </div>
 
-
+<div id="static-ad-1" style="width: 100px; height: 100px;"></div>
+    
 <script>
         googletag.cmd.push(function() {
           // Ensure the first call to display comes after static ad slot
