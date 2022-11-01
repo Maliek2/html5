@@ -11,7 +11,53 @@
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      window.googletag = window.googletag || {cmd: []};
 
+      // GPT ad slots
+      var anchorSlot;
+      var staticSlot;
+
+      googletag.cmd.push(function() {
+        // Define an anchor ad slot at the top of the viewport.
+        // Note: a single anchor ad slot may be defined per page, at either the
+        // top or bottom of the viewport.
+        //
+        // Be aware that anchor ads are not limited to mobile devices. If you
+        // serve the same code to both mobile and non-mobile users, it is
+        // recommended to explicitly define when and where anchor ads should be
+        // shown for each environment. Here we use a basic check of viewport
+        // width to create a top anchor on mobile and a bottom anchor on
+        // non-mobile devices.
+        if (document.body.clientWidth <= 500) {
+          anchorSlot = googletag.defineOutOfPageSlot(
+            '/6355419/Travel', googletag.enums.OutOfPageFormat.TOP_ANCHOR);
+        } else {
+          anchorSlot = googletag.defineOutOfPageSlot(
+            '/6355419/Travel', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+        }
+
+        // Anchor slots return null if the page or device does not support
+        // anchors.
+        if (anchorSlot) {
+          anchorSlot
+              .setTargeting('test', 'anchor')
+              .addService(googletag.pubads());
+
+          document.getElementById('status').innerText =
+            'Anchor ad is initialized. Scroll page to activate.';
+        }
+
+        // Define static ad slots.
+        staticSlot = googletag.defineSlot(
+              '/6355419/Travel/Europe', [100, 100], 'static-ad-1')
+            .addService(googletag.pubads());
+
+        // Enable SRA and services.
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
     
      <style>
 div {
@@ -22,7 +68,10 @@ div {
 
 </head>
 <body>
-
+  <div id="page-content" style="height: 900vh;">
+      <h1 id="status">Anchor ads are not supported on this page.</h1>
+      <div id="static-ad-1" style="width: 100px; height: 100px;"></div>
+    
   <h3>Advertisement</h3>
   <p class="previewOnly">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem, ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Donec vitae ornare risus. Maecenas eleifend ante vel dui laoreet, et porttitor libero rutrum. Nam arcu mi, ullamcorper at risus et, pulvinar ultrices erat. In pellentesque sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut. Sed sagittis aliquet lorem sed dictum.
@@ -109,8 +158,17 @@ div {
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem, ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Donec vitae ornare risus. Maecenas eleifend ante vel dui laoreet, et porttitor libero rutrum. Nam arcu mi, ullamcorper at risus et, pulvinar ultrices erat. In pellentesque sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut. Sed sagittis aliquet lorem sed dictum.
   </p>
 </div>
-<div id="piechart"></div>
 
+
+<script>
+        googletag.cmd.push(function() {
+          // Ensure the first call to display comes after static ad slot
+          // divs are defined.
+          googletag.display(staticSlot);
+        });
+
+</script>
+<div id="piechart"></div>
 <script type="text/javascript">
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
