@@ -1,0 +1,6 @@
+{
+    "title" : "We appreciate your business!",
+    "body" : "Thanks for being a loyal customer. Here's 20% off your next purchase as a thanks!",
+    "button_text" : "Save",
+    "button_link" : "myapp://loyalty_promo"
+}
