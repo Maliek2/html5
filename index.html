@@ -18,11 +18,11 @@
     <h1>Maliek App Demo</h1>
     
     <lu>
-        <li><a href="javascript:admob.cacheInterstitial();">load Interstitial</a></li>
+        <li><a href="javascript:admob.cacheInterstitial();">Load Interstitial</a></li>
         <br/>
-        <li><a href="javascript:showInterstitial();">show Interstitial</a></li>
+        <li><a href="javascript:showInterstitial();">Show Interstitial</a></li>
         <br/>
-        <li><a href="javascript:showTestBanner();">show test banner</a></li>
+        <li><a href="javascript:showTestBanner();">Test Banner</a></li>
         <br/>
         <li><a href="javascript:admob.showBannerAbsolute(admob.BannerSize.BANNER,0,70);">banner 1</a></li>
         <br/>
@@ -32,16 +32,21 @@
         <br/>
         <li><a href="javascript:admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP,null)">banner 4</a></li>
         <br/>
-        <li><a href="javascript:admob.hideBanner()">hide banner</a></li>
+        <li><a href="javascript:admob.hideBanner()">Hide Banner</a></li>
+    
+        <li><a href="javascript:admob.hideBanner();">Hiden Banner</a></li>
+        <br/><br/>
+        <li><a href="javascript:admob.showBannerAbsolute(admob.BannerSize.BANNER,0,170)">Show Banner Absolute</a></li>
+        <br/><br/>
+        <li><a href="javascript:admob.showBanner(admob.BannerSize.SMART_BANNER,admob.Position.TOP_CENTER);">Banner Relation</a></li>
     </lu>
-
 </div>
  <div id="alertdiv"/>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript">
 function showTestBanner(){
  		var admobParam=new  admob.Params();
-        //admobParam.extra={'keyword':"admob phonegame"};
+        //admobParam.extra={'keyword':"admob chatapp"};
         //admobParam.isForChild=true;
         admobParam.isTesting=true;
         admob.showBanner(admob.BannerSize.BANNER,admob.Position.TOP_CENTER,admobParam);
@@ -72,14 +77,8 @@ function showTestBanner(){
     }
 
     document.addEventListener('deviceready',onDeviceReady, false);
-</script>
-    <lu>
-        <li><a href="javascript:admob.hideBanner();">hiden banner</a></li>
-        <br/><br/>
-        <li><a href="javascript:admob.showBannerAbsolute(admob.BannerSize.BANNER,0,170)">show banner absolute</a></li>
-        <br/><br/>
-        <li><a href="javascript:admob.showBanner(admob.BannerSize.SMART_BANNER,admob.Position.TOP_CENTER);">show banner relation</a></li>
-    </lu>
+   </script>
+    
 
 </div>
 <script type="text/javascript" src="cordova.js"></script>
