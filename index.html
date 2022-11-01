@@ -58,7 +58,6 @@
     </script>
 
 
-
 </head>
 <body>
 <div id="page-content" style="height: 900vh;">
@@ -117,46 +116,7 @@
           // divs are defined.
           googletag.display(staticSlot);
         });
-        function onDeviceReady() {
-        admob.initAdmob("banner ID","interstitial ID");
-    }
-    document.addEventListener('deviceready',onDeviceReady, true);
-
-function showTestBanner(){
-var admobParam=new  admob.Params();
-        //admobParam.extra={'keyword':"admob phoneapp"};
-        //admobParam.isForChild=true;
-        admobParam.isTesting=true;
-        admob.showBanner(admob.BannerSize.BANNER,admob.Position.TOP_CENTER,admobParam);
-}
-    function showInterstitial(){
-        admob.isInterstitialReady(function(isReady){
-            if(isReady){
-                admob.showInterstitial();
-            }
-        });
-    }
-    function onInterstitialReceive (message) {
-        alert(message.type+" ,you can show it now");
-        //admob.showInterstitial();//show it when received
-    }
-    function onReceiveFail (message) {
-     	var msg=admob.Error[message.data];
-        if(msg==undefined){
-           msg=message.data;
-        }
-        document.getElementById("alertdiv").innerHTML="load fail: "+message.type+"  "+msg;
-    }
-    function onDeviceReady() {
-    	admob.initAdmob("ca-app-pub-3940256099942544/2934735716","ca-app-pub-3940256099942544/4411468910");
-        document.addEventListener(admob.Event.onInterstitialReceive, onInterstitialReceive, false);
-        document.addEventListener(admob.Event.onInterstitialFailedReceive,onReceiveFail, false);
-        document.addEventListener(admob.Event.onBannerFailedReceive,onReceiveFail, false);
-    }
-
-    document.addEventListener('deviceready',onDeviceReady, false);
-   
-      </script>
+   </script>
 
    <h3>Advertisement</h3>
     <p class="previewOnly">
@@ -195,24 +155,11 @@ var admobParam=new  admob.Params();
     <p class="previewOnly">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem, ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Donec vitae ornare risus. Maecenas eleifend ante vel dui laoreet, et porttitor libero rutrum. Nam arcu mi, ullamcorper at risus et, pulvinar ultrices erat. In pellentesque sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut. Sed sagittis aliquet lorem sed dictum.
   </p>
+
    <div align="center">
    <div id="static-ad-1" style="width: 100px; height: 100px;"></div>
 
   </div>
-
-
-
-
-
-
-
-    
-   
-
-  
- 
-
-
 
 
 </body>
