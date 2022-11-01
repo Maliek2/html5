@@ -31,35 +31,9 @@
       }
     </script>
     <style>
-      .buttons {
-         display: flex;
-         justify-content: center
-      }
-
-      .column {
-        float: left;
-        height: 500px;
-        min-width: 300px;
-        max-width: 33%;
-      }
-
-      .placeholder {
-        align-items: center;
-        background-color: lightgrey;
-        display: flex;
-        justify-content: center;
-      }
-
-      .placeholder:empty::before {
-        background-color: dimgrey;
-        border-radius: 5px;
-        color: lightgrey;
-        content: "Ad";
-        font: 12px sans-serif;
-        padding: 3px;
-        text-align: center;
-        width: 20px;
-      }
+        .bodyStyle{
+            font-size: 32px;
+        }
     </style>
     
 </head>
@@ -73,7 +47,7 @@
       <div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
       <button onclick="loadAds();">Load Ads</button>
     
-    </div>
+    
 
     <lu>
         <li><a href="javascript:admob.cacheInterstitial();">Load Interstitial</a></li>
@@ -98,7 +72,7 @@
         <br/><br/>
         <li><a href="javascript:admob.showBanner(admob.BannerSize.SMART_BANNER,admob.Position.TOP_CENTER);">Banner Relation</a></li>
     </lu>
-
+</div>
 </div>
 </div>
 <script type="text/javascript">
