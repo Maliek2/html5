@@ -56,7 +56,7 @@
         background-color: dimgrey;
         border-radius: 5px;
         color: lightgrey;
-        content: "Advertisement";
+        content: "Ads";
         font: 12px sans-serif;
         padding: 3px;
         text-align: center;
@@ -73,6 +73,7 @@
 <body >
 <main align="center">
 <div class="bodyStyle">
+</div>
  
     <h1>News App</h1>
 
@@ -80,27 +81,27 @@
      <div class="column">
       <h5>Advertisement</h5>
       <div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
-      
+      </div>
     
-</div>
-</div>
 
 
-<div class="column">
-<h5>Advertisement</h5>
 
-<p class="previewOnly">
+   <div class="column">
+   <h5>Advertisement</h5>
+    <div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
+ 
+    <p class="previewOnly">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem, ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Donec vitae ornare risus. Maecenas eleifend ante vel dui laoreet, et porttitor libero rutrum. Nam arcu mi, ullamcorper at risus et, pulvinar ultrices erat. In pellentesque sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut. Sed sagittis aliquet lorem sed dictum.
   </p>
-<div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
- </div>
+   </div>
+
  <div class="column">
   <h5>Advertisement</h5>
   <p class="previewOnly">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem, ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Donec vitae ornare risus. Maecenas eleifend ante vel dui laoreet, et porttitor libero rutrum. Nam arcu mi, ullamcorper at risus et, pulvinar ultrices erat. In pellentesque sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut. Sed sagittis aliquet lorem sed dictum.
   </p>
 
-<div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
+ <div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
  </div>
     
   <div class="column">
@@ -133,12 +134,26 @@
   <p class="previewOnly">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem, ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Donec vitae ornare risus. Maecenas eleifend ante vel dui laoreet, et porttitor libero rutrum. Nam arcu mi, ullamcorper at risus et, pulvinar ultrices erat. In pellentesque sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut. Sed sagittis aliquet lorem sed dictum.
   </p>
-<div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
-      
+<div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>      
+</div>
+<div class="column">
+   <h5>Advertisement</h5>
+    <div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
+ 
+    <p class="previewOnly">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem, ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Donec vitae ornare risus. Maecenas eleifend ante vel dui laoreet, et porttitor libero rutrum. Nam arcu mi, ullamcorper at risus et, pulvinar ultrices erat. In pellentesque sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut. Sed sagittis aliquet lorem sed dictum.
+  </p>
+   </div>
 
-
-
-
+<div id="div-for-slot" style="width: 300px; height: 250px;">
+      <script>
+        googletag.cmd.push(function() {
+          // This will only register the slot.
+          // Ad will be fetched only when refresh is called.
+          googletag.display('div-for-slot');
+        });
+      </script>
+    </div>
 <lu>
         <li><a href="javascript:admob.cacheInterstitial();">Load Interstitial</a></li>
         <br/>
@@ -162,17 +177,6 @@
         <br/><br/>
         <li><a href="javascript:admob.showBanner(admob.BannerSize.SMART_BANNER,admob.Position.TOP_CENTER);">Banner Relation</a></li>
     </lu>
-</div>
-<div id="div-for-slot" style="width: 300px; height: 250px;">
-      <script>
-        googletag.cmd.push(function() {
-          // This will only register the slot.
-          // Ad will be fetched only when refresh is called.
-          googletag.display('div-for-slot');
-        });
-      </script>
-    </div>
-
     
 
 
@@ -183,7 +187,6 @@
     </button>
     </div>
 
-</div>
 </main>
 <div id="alertdiv"/>
 <script type="text/javascript" src="ads.js"></script>
