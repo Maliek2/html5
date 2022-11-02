@@ -11,27 +11,7 @@
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-      window.googletag = window.googletag || {cmd: []};
-      googletag.cmd.push(function() {
-        googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'slot-1')
-                 .addService(googletag.pubads());
-        googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'slot-2')
-                 .addService(googletag.pubads());
-        googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'slot-3')
-                 .addService(googletag.pubads());
-
-        // Enable SRA and services.
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-      });
-
-      function loadAds() {
-        googletag.cmd.push(function() {
-          googletag.display('slot-3');
-        });
-      }
-    </script>
+    
     <style>
 .button {
   border: none;
@@ -93,60 +73,7 @@ div {
     color: rgb(255, 255, 255);
 }
    </style>
-   <script>
-      googletag = window.googletag || {cmd: []};
-
-      var rewardedSlot;
-      googletag.cmd.push(function() {
-        rewardedSlot = googletag.defineOutOfPageSlot(
-            '/22639388115/rewarded_web_example',
-            googletag.enums.OutOfPageFormat.REWARDED);
-
-        // Slot returns null if the page or device does not support rewarded ads.
-        if (rewardedSlot) {
-          rewardedSlot.addService(googletag.pubads());
-
-          googletag.pubads().addEventListener('rewardedSlotReady', function(event) {
-            document.getElementById('watchAdButton').onclick = function() {
-              event.makeRewardedVisible();
-              displayModal();
-            }
-
-            displayModal('reward', 'Watch an ad to receive a special reward?');
-          });
-
-          googletag.pubads().addEventListener('rewardedSlotClosed', dismissRewardedAd);
-
-          googletag.pubads().addEventListener('rewardedSlotGranted', function(event) {
-            // Automatically close the ad by destroying the slot.
-            // Remove this to force the user to close the ad themselves.
-            dismissRewardedAd();
-
-            var reward = event.payload;
-            displayModal('grant', 'You have been rewarded ' + reward.amount + ' '
-                                                            + reward.type + '!');
-          });
-
-          googletag.enableServices();
-          googletag.display(rewardedSlot);
-        }
-      });
-
-      function dismissRewardedAd() {
-        displayModal();
-        googletag.destroySlots([rewardedSlot]);
-      }
-
-      function displayModal(type, message) {
-        var modal = document.getElementById('modal');
-        modal.removeAttribute('data-type');
-
-        if (type) {
-          document.getElementById('modalMessage').textContent = message;
-          modal.setAttribute('data-type', type);
-        }
-      }
-    </script>
+   
     <style>
       .modal {
         display: none;
